@@ -9,6 +9,9 @@ public class Transacao {
         if (produto == null) {
             throw new IllegalArgumentException("Produto é obrigatório");
         }
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("Quantidade inválida");
+        }
         this.dataTransacao = dataTransacao;
         this.produto = produto;
         this.quantidade = quantidade;
@@ -25,6 +28,9 @@ public class Transacao {
         return quantidade;
     }
     public void setQuantidade(int quantidade) {
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("Quantidade inválida");
+        }
         this.quantidade = quantidade;
     }
 
