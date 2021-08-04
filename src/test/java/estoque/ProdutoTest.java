@@ -36,7 +36,7 @@ class ProdutoTest {
     @Test
     void deveRetornarExcecaoCriarProdutoPrecoNegativo() {
         try {
-            Produto produto = new Produto("Caneta",100,-1.0f,50,200);
+            Produto produto = new Produto("Caneta",100,-0.01f,50,200);
             fail();
         }
         catch (IllegalArgumentException e) {
@@ -48,7 +48,7 @@ class ProdutoTest {
     void deveRetornarExcecaoSetarNegativoPrecoProduto() {
         try {
             Produto produto = new Produto("Caneta",100,2.0f,50,200);
-            produto.setPrecoUnitario(-1.0f);
+            produto.setPrecoUnitario(-0.01f);
             fail();
         }
         catch (IllegalArgumentException e) {
